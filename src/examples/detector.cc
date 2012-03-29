@@ -354,7 +354,6 @@ void send_detected_message(lcm_t* lcm, person& person){
 	mavlink_message_t ptracking;
 	mavlink_object_detected_t pd;
 	pd.timestamp = current_time;
-	//pd.identifier = "person";
 	pd.position[0] = person.position.at<float>(0);
 	pd.position[1] = person.position.at<float>(1);
 	pd.position[2] = person.position.at<float>(2);
@@ -461,7 +460,7 @@ void patch_detection(cv::Mat& image, std::vector<person>& persons){
 									std::min( t, img_height));
 				//printf("scaling: %f\n", scaling_factor);
 				p->confidence = (float)(1 - (minVal / maxVal));
-				printf("confidence: %f\n",p->confidence);
+				//printf("confidence: %f\n",p->confidence);
 				//printf("height: %f\n",p->height);
 				// update patch
 				cv::rectangle(overlay, new_tl, new_br, cv::Scalar(200), 3);
