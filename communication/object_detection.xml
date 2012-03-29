@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<mavlink>
+	<include>common.xml</include>
+	<description>
+		This message contains the position of a detected object, three vectors for the detection-errors (or object-dimensions) as well as a timestamp, an id number and an identification string.
+	</description>
+	<messages>
+		<message id="187" name="OBJECT_DETECTED">
+			<field type="char[16]" name="identifier">String containing an description or identifier for the object, e.g. 'person'</field>
+			<field type="uint32_t" name="tracking_id">ID from tracker</field>
+			<field type="uint64_t" name="timestamp">Timestamp</field>
+			<field type="float[3]" name="position">Position</field>
+			<field type="float[3]" name="vector_x">X Vector</field>
+			<field type="float[3]" name="vector_y">Y Vector</field>
+			<field type="float[3]" name="vector_z">Z Vector</field>
+			
+		</message>
+	</messages>
+</mavlink>
